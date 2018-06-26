@@ -1,0 +1,307 @@
+%\documentclass[sig-alternate,10pt,twocolumn]{article}
+%\documentclass[letterpaper]{sig-alternate-10pt}
+%\usepackage{geometry} \geometry{letterpaper,total={6.5in,9in}}
+%\documentclass[10pt]{sig-alternate}
+%\documentclass[letterpaper,twocolumn,10pt]{article}
+%\usepackage{usenix}
+%\documentclass[10pt,preprint]{sigplanconf}
+%\documentclass[letterpaper]{sig-alternate-05-2015}
+%\documentclass[letterpaper,twocolumn]{sig-alternate-10pt-compact}
+%\documentclass{apnet18}
+\documentclass[sigconf,10pt]{acmart}
+\setcopyright{rightsretained}
+
+%\documentclass[letterpaper,twocolumn]{sig-alternate-10pt}
+\makeatletter
+%\newcommand\subparagraph{%
+%  \@startsection{subparagraph}{5}
+%  {\parindent}
+%  {3.25ex \@plus 1ex \@minus .2ex}
+%  {-1em}
+%  {\normalfont\normalsize\bfseries}}
+\makeatother
+%\newcommand*{\refname}{Bibliography}
+
+%\newcommand\newblock{\hskip .11em plus.33em minus.07em}
+
+
+\let\subparagraph\relax % You don't want to use \subparagraph
+\usepackage[small, compact]{titlesec}
+\usepackage{ifpdf}
+\usepackage{balance}
+%\usepackage[T1]{fontenc}
+%\usepackage{raged2e}
+
+\usepackage{slashbox}
+\usepackage{multirow}
+\usepackage{hhline}
+
+\usepackage[inline]{enumitem}
+%\usepackage[small, compact]{titlesec}
+\usepackage{url, comment}
+%\usepackage[small,bf]{caption}
+\usepackage{graphicx}
+ \usepackage{subfig}
+
+\usepackage[scaled]{beramono}
+%\usepackage[usenames, dvipsnames, svgnames, table]{xcolor}
+%\usepackage[sort&compress]{natbib}  % changed this to avoid one error
+%\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{ifthen}
+%\usepackage{amsmath, amssymb}
+\usepackage{xspace}
+\usepackage{epstopdf}
+\usepackage{flushend}
+
+\captionsetup[subfloat]{font = small}
+
+
+\usepackage[titletoc,title]{appendix}
+%\usepackage{cite, hyperref}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,      % false: boxed links; true: colored links
+  linkcolor=blue,       % color of internal links
+  citecolor=magenta,    % color of links to bibliography
+  filecolor=cyan,       % color of file links
+  urlcolor=red          % color of external links
+}
+
+% \usepackage{flushend}
+
+% \usepackage[hang,flushmargin]{footmisc}
+
+\frenchspacing
+
+\renewcommand{\ttdefault}{txtt}
+\renewcommand{\footnotesize}{\scriptsize}
+\usepackage[noend]{algpseudocode}
+
+\usepackage{algorithm}
+%\floatname{algorithm}{Pseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+%\usepackage{algorithm,algorithmic}
+\newlength\myindent
+\setlength\myindent{2em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+
+\renewcommand{\ttdefault}{txtt}
+
+\setlength{\columnsep}{0.25in}
+\setlength{\parskip}{0pt}
+
+\setlength{\textfloatsep}{  7pt plus 1.0pt minus 2.0pt} % 20.0pt plus 2.0pt minus 4.0pt
+\setlength{\floatsep}    {  4pt plus 1.0pt minus 2.0pt} % 12.0pt plus 2.0pt minus 2.0pt
+\setlength{\intextsep}   {  4pt plus 1.0pt minus 2.0pt} % 12.0pt plus 2.0pt minus 2.0pt
+
+\addtolength{\belowcaptionskip}{-2mm}
+\addtolength{\abovecaptionskip}{-2mm}
+
+% \usepackage{titling}
+% \setlength{\droptitle}{-1cm}
+
+% BEGIN Theorem environment settings
+%\usepackage[amsmath,thmmarks,framed,hyperref]{ntheorem}
+%\usepackage[thmmarks,framed,hyperref]{ntheorem}
+%\theoremstyle{plain}
+
+\newtheorem{myExample}{Example}[section]
+\newtheorem{myDef}{Definition}[section]
+
+\newtheorem{myHeuristic}{Heuristic}
+\newtheorem{myProposition}{Proposition}
+\newtheorem{myObservation}{Observation}
+\newtheorem{myoption}{Option}
+\newtheorem{problem}{Problem}
+
+
+
+% Proofs get merged into text, with a "Proof" flag and box at the end
+
+
+\newtheorem{myProof}{Proof}
+\newtheorem{myProofSketch}{Proof Sketch}
+
+
+% END Theorem environment settings
+
+\newenvironment{icompact}{
+\begin{itemize}[topsep=2.5pt, partopsep=0pt, leftmargin=1em]
+  \setlength{\itemsep}{2.5pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{ecompact}{
+\begin{enumerate}[topsep=2.5pt, partopsep=0pt, leftmargin=1em]
+  \setlength{\itemsep}{2.5pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+%make references compact
+%\setlength{\bibsep}{0.2pt}
+
+\newcommand{\ignore}[1]{{}}
+\newcommand{\sys}{{HERMES}\xspace}
+%\newcommand{\sys}{{ResiLB}\xspace}
+\newcommand{\caseA}{{stretched arrival}\xspace}
+\newcommand{\caseB}{{batch arrival}\xspace}
+
+\def\ie{{i.e.}}
+\def\eg{{e.g.}}
+\def\etal{{et al.}}
+\def\wrt{{w.r.t.}}
+\def\etc{etc.}
+
+\newcommand{\todo}[1]{\textcolor{Red}{\{#1\}}}
+
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+\newcommand{\hong}[1]{{\color{blue}{#1}}}
+\newcommand{\hongxx}[1]{{\color{black}{#1}}}
+\newcommand{\draft}[1]{{\color{orange}{#1}}}
+\newcommand{\hongx}[1]{ \ifthenelse{\boolean{showcomments}}
+{ \textcolor{Orange}{hong:  #1}} {} }
+\newcommand{\mosharaf}[1]{ \ifthenelse{\boolean{showcomments}}
+{ \textcolor{purple}{(Mosharaf:  #1)}} {} }
+\newcommand{\kai}[1]{{\color{red}[kai: #1]}}
+\newcommand{\TODO}[1]{{\color{red}[#1]}}
+
+\newcommand{\paraspace}{\vspace{0.05in}}
+\newcommand{\parab}[1]{\paraspace\noindent{\bf #1} }
+
+%%%%%%%% to calculate the time %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\hour \newcount\minute
+\hour=\time  \divide \hour by 60
+\minute=\time
+\loop \ifnum \minute > 59 \advance \minute by -60 \repeat
+\def\drafttime{\ifnum \hour<13 \number\hour:%
+                      \ifnum \minute<10 0\fi
+                      \number\minute
+                      \ifnum \hour<12 \ AM\else \ PM\fi
+         \else \advance \hour by -12 \number\hour:%
+                      \ifnum \minute<10 0\fi
+                      \number\minute \ PM\fi}
+\def\timestamp{\today \ \drafttime}
+
+
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
+\begin{document}
+
+\title{Pas de deux:  Shape the Circuits, \\ and Shape the Apps too!}
+\vspace{-0.1in}
+\author{Hong Zhang$^{1}$,~~~~~Kai Chen$^1$,~~~~~Mosharaf Chowdhury$^2$}
+    \affiliation{
+     $^1$SING Lab, Hong Kong University of Science and Technology 
+    $^2$University of Michigan\\
+    }
+\renewcommand{\authors}{Hong Zhang, Kai Chen, Mosharaf Chowdhury}
+%  \email{{hzhangan,jzhangcs,wbaiab,kaichen}@cse.ust.hk, mosharaf@umich.edu}
+
+%\author{Hong Zhang, Kai Chen}
+%    \affiliation{
+% SING Lab, Hong Kong University of Science and Technology
+%    }
+
+%\author{Mosharaf Chowdhury}
+%    \affiliation{
+%    University of Michigan
+%    }
+
+%\author{ Hong Zhang$^{1}$~~~~~Junxue Zhang$^1$~~~~~Wei Bai$^1$~~~~~Kai Chen$^1$~~~~~Mosharaf Chowdhury$^2$ \\
+%$^1$SING Lab, Hong Kong University of Science and Technology \\
+%$^2$University of Michigan\\
+% \{hzhangan,jzhangcs,wbaiab,kaichen\}@cse.ust.hk, mosharaf@umich.edu
+%}
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{H. Zhang et al.}
+\renewcommand{\shorttitle}{Pas de deux:  Shape the Circuits, and Shape the Apps too!}
+\begin{abstract}
+Despite continued efforts toward building high bandwidth, low cost datacenter networks with reconfigurable optical fabrics, the impact of optical networks on datacenter applications has received little attention.
+Given the constraints of optical networks and the semantics of datacenter applications, we believe the network-application intersection to be the next innovation hotspot.
+In this paper, we specifically focus on data-parallel applications for two primary reasons: they are a natural fit to exploit high bandwidth optical fabrics, and they often form structured communication patterns or coflows.
+
+We show that configuring circuits in reaction to changing traffic patterns is not enough.
+Efficient scheduling of even a single coflow in optical networks should be a \emph{``Pas de deux''}\footnote{A pas de deux is a dance duet in which two dancers perform ballet steps together.} -- \emph{ a joint shaping of not only the underlying circuit, but also the application's traffic demand.}
+Our preliminary evaluation with a production trace shows that joint shaping is on average within 1.18$\times$ of the optimal and performs $30\%$ better than solutions that configure circuits in application-agnostic fashions.
+We further extend our analysis to inter-coflow scheduling and propose a layered solution that jointly considers circuit reconfiguration, coflow prioritization, as well as flow rate and route assignments.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10003033.10003068.10003073.10003076</concept_id>
+<concept_desc>Networks~Traffic engineering algorithms</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10003033.10003034</concept_id>
+<concept_desc>Networks~Network architectures</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Networks~Traffic engineering algorithms}
+\ccsdesc[500]{Networks~Network architectures}
+
+\copyrightyear{2018}
+\acmYear{2018}
+\setcopyright{acmcopyright}
+\acmConference[APNet '18]{2nd Asia-Pacific Workshop on Networking}{August 2--3, 2018}{Beijing, China}
+\acmPrice{15.00}
+\acmDOI{10.1145/3232565.3232568}
+\acmISBN{978-1-4503-6395-2/18/08}
+
+
+\keywords{Data-intensive applications; optical switching; data center}
+
+\maketitle
+%\author{\timestamp}
+
+
+\input{sections/intro.tex}
+\input{sections/background.tex}
+\input{sections/algorithm.tex}
+\input{sections/evaluation.tex}
+\input{sections/extend.tex}
+\input{sections/related.tex}
+
+
+
+%{
+%\raggedright
+%\bibliographystyle{acm}
+%\bibliography{reference,mosharaf}
+%}
+
+%\begin{normalsize}
+%\begin{small}
+%\bibliographystyle{acm}
+%\bibliography{reference}
+%\end{small}
+%\end{normalsize}
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{reference,opt-reference}
+
+
+% \input{sections/appendix.tex}
+
+\end{document} 

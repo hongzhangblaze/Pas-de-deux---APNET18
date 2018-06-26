@@ -1,0 +1,23 @@
+\section{Background}
+
+\subsection{The Network Model}
+We consider a network model where the entire
+datacenter fabric is abstracted out as one non-blocking core
+ interconnecting all the $n$ ToRs.
+Each ToR has $k$ sending and receiving ports. ToRs
+can send and receive through these $k$ different ports simultaneously by establishing a directed inter-port connection to any other ToRs, with each inter-port connection carries a fixed capacity of $B$.
+A \emph{feasible} circuit configuration can be presented as a $n$$\times$$n$ matrix $M$, where
+$M_{ij} \in \{0,1, ...k\}$ is the number of inter-port connections from ToR $i$ to ToR $j$.
+Note that the configuration is also constrained by the sending and receiving port number $k$ per ToR, where we have
+ $\sum_{j=1}^nM_{ij}$$\leq$$k$ and $\sum_{i=1}^nM_{ij}$$\leq$$k$ for all $i$ and $j$. We denote the set of all \emph{feasible configurations} as $\{\mathbf{M}\}$. Moreover, the inter-port connection can be reconfigured with a reconfiguration delay $\delta$
+during which the switch cannot carry any traffic. Such $\delta$ can range from tens
+of microseconds to few milliseconds depending on the technology \cite{eclipse}.
+
+One major difference with previous models lies in the choice of $k$. Most prior work assumes $k = 1$, which means that one ToR can only establish one exclusive circuit connection to another ToR.
+However, to support wide-spread communication patterns, optical architecture designs are evolving with richer connectivity among ToRs. For example, ProjecToR \cite{projector} supports at least tens of lasers and photodetectors (corresponds to sending and receiving ports respectively) under each rack to handle fan-in/fan-out traffic. MegaSwitch \cite{megaswitch} supports all-to-all communications among more than 30 ToRs (due to WSS port number limitation) simultaneously with $k$ as large as 192. Consequently, in our model $k$ can be a large number comparable to $n$.
+
+\subsection{The Traffic Model}
+In this paper, we focus on the coflow traffic model.
+Unlike the traditional flow abstraction, a coflow captures a collection of flows between two groups of machines in successive computation stages, where the communication stage finishes only after \emph{all} the flows have completed \cite{varys}. A typical example of coflow is the shuffle between mappers and reducers in MapReduce \cite{mapreduce}.
+More specifically, a coflow can be represented as an
+$n$$\times$$n$ traffic demand matrix $C$, where each element $C_{ij}$ indicates the demand from ToR $i$ to ToR $j$.

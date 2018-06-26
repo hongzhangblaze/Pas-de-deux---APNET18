@@ -1,0 +1,10 @@
+\abstract{
+Despite continued efforts toward building high bandwidth, low cost datacenter networks with reconfigurable optical fabrics, the impact of optical networks on datacenter applications has received little attention.
+Given the constraints of optical networks and the semantics of datacenter applications, we believe the network-application intersection to be the next innovation hotspot. 
+In this paper, we specifically focus on data-parallel applications for two primary reasons: they are a natural fit to exploit high bandwidth optical fabrics, and they often form structured communication patterns or coflows.
+
+We show that configuring circuits in reaction to changing traffic patterns is not enough. 
+Efficient scheduling of even a single coflow in optical networks should be a \emph{``Pas de deux''}\footnote{A pas de deux is a dance duet in which two dancers perform ballet steps together.} -- \emph{ a joint shaping of not only the underlying circuit, but also the application's traffic demand.}
+Our preliminary evaluation with a production trace shows that joint shaping is on average within 1.18$\times$ of the optimal and performs $30\%$ better than solutions that configure circuits in application-agnostic fashions.
+We further extend our analysis to inter-coflow scheduling and propose a layered solution that jointly considers circuit reconfiguration, coflow prioritization, as well as flow rate and route assignments.
+}

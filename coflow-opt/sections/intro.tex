@@ -1,0 +1,49 @@
+\section{Introduction}
+\label{sec:intro}
+In recent years, a growing body of datacenter architecture designs \cite{mordia-ptl,projector,megaswitch,osa,cthrough} have proposed interconnecting Top-of-Rack (ToR) switches with optical fabrics.
+Although these designs provide high bisection bandwidth, low power consumption, and reduced cabling complexity, they suffer from high circuit reconfiguration delay of up to tens of milliseconds \cite{megaswitch}.
+Yet, it is still unclear how they affect the end-to-end performance of datacenter applications.
+
+Scheduling applications on the state-of-the-art optical architecture \cite{projector,megaswitch} differs from previous circuit scheduling problems \cite{eclipse,sunflow,solstice} in the following three aspects:
+\begin{icompact}
+\item{\textbf{Application semantics}: Most existing circuit scheduling algorithms aim to maximize the throughput of an aggregated traffic matrix. %consists of multiple flows.
+    However, this may not directly benefit application-level communication
+performance \cite{varys} because each application can have its own traffic matrix and its own performance objective.
+The coflow abstraction \cite{coflow} captures such semantics of communication between two groups of machines in successive computation stages.
+}
+\item{\textbf{Traffic pattern}: Most existing circuit scheduling designs assume that the traffic demand matrix is \emph{sparse} \cite{cthrough,eclipse}. However, many coflows involve wide-spread communication among thousands of machines \cite{varys}.
+    }
+\item{\textbf{Connectivity:} Most previous work adopt a network model, where one ToR can only establish one exclusive circuit connection to another ToR.
+However, to support wide-spread communication patterns, recent optical datacenter architecture designs \cite{projector,megaswitch} allow increased connectivity among ToRs.
+For example, one ToR can simultaneously establish tens (ProjecToR \cite{projector}) to hundreds (MegaSwitch \cite{megaswitch}) of circuit connections to other ToRs.}
+\end{icompact}
+Overall, the presence of coflows in data-parallel applications and the advances in optical designs greatly complicate the circuit scheduling problem.
+Minimizing the average coflow completion time (CCT) requires coordinated scheduling of flows within each coflow as well as prioritized scheduling among multiple coflows.
+The rich connectivity among ToRs further increases the solution space.
+
+In this paper, we start by investigating an important special case that involves serving a single coflow on optical fabrics.
+We observe that although the rich connectivity brings new opportunity to serve coflows without reconfiguration,
+obtaining a circuit configuration that well matches a coflow's traffic pattern is not always possible.
+Such mismatch between the coflow and circuit structure greatly increases the CCT ($\S$\ref{sec:alg1}).
+
+To alleviate this mismatch, we instead ask the following question:
+\emph{can we reshape the coflow traffic demand matrix to match the circuit configuration?}
+In particular, we notice that the demand matrix can be effectively reshaped by rerouting traffic via other ToRs as relays.
+Multi-hop rerouting is not new for optical networks.
+However, unlike previous work \cite{osa} that employ multi-hop routing to provide overall connectivity, we leverage a fine-grained, coflow-specific multi-hop routing scheme to redistribute the original coflow traffic demand among ToRs ($\S$\ref{sec:alg2}).
+However, while reshaping coflows can help in mitigating the mismatch and improving CCT, its effectiveness depends on underlying circuit configurations.
+
+Given that neither coflow nor circuit (re)shaping alone efficiently minimizes CCT, we reformulate the problem as \emph{a joint shaping of both circuit configuration and coflow traffic demand}.
+We show through examples that such joint scheduling brings extra flexility to find a good matching, and effectively minimizes the CCT ($\S$\ref{sec:alg3}).
+Moreover, we design a heuristic that effectively calculates the joint scheduling by
+iteratively:
+(i) releasing under-utilized circuits by reshaping the coflow demand;
+(ii) configuring the released circuits to serve the bottleneck source-destination ToR pair.
+Preliminary evaluation with a production trace shows that
+joint shaping is on average within 1.18$\times$ of the optimal and performs $30\%$ better in comparison to algorithms that only configure circuits ($\S$\ref{sec:eval}).
+
+We conclude by extending our analysis to the general case of inter-coflow scheduling ($\S$\ref{sec:alg4}).
+Specifically, we find each of the following factors: circuit configuration, routing, rate allocation, and coflow prioritization to play important roles, leading to a joint scheduling problem with exponential complexity.
+To perform efficient scheduling with reasonable complexity, we design a framework that effectively decouples the scheduling into three successive steps -- circuit configuration, coflow permutation, and rate/routing.
+Each step is further transformed into the single coflow scheduling problem we have already formulated.
+We leave the in-depth evaluation under the general case as future work.

@@ -1,0 +1,225 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{??}{cof}{}]%
+        {coflow-benchmark}
+\bibinfo{title}{{{Coflow Benchmark Based on Facebook Traces}}}.
+\newblock
+  \bibinfo{howpublished}{\url{https://github.com/coflow/coflow-benchmark}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bojja, Alizadeh, and Viswanath}{Bojja
+  et~al\mbox{.}}{2015}]%
+        {eclipse}
+\bibfield{author}{\bibinfo{person}{Shaileshh Bojja}, \bibinfo{person}{Mohammad
+  Alizadeh}, {and} \bibinfo{person}{Pramod Viswanath}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Costly circuits, submodular schedules and
+  approximate Carath{\'e}odory theorems}. In \bibinfo{booktitle}{{\em
+  SIGMETRICS}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chen, Singla, Singh, Ramachandran, Xu, Zhang,
+  Wen, and Chen}{Chen et~al\mbox{.}}{2012}]%
+        {osa}
+\bibfield{author}{\bibinfo{person}{Kai Chen}, \bibinfo{person}{Ankit Singla},
+  \bibinfo{person}{Atul Singh}, \bibinfo{person}{Kishore Ramachandran},
+  \bibinfo{person}{Lei Xu}, \bibinfo{person}{Yueping Zhang},
+  \bibinfo{person}{Xitao Wen}, {and} \bibinfo{person}{Yan Chen}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{{OSA}: An Optical Switching Architecture for Data
+  Center Networks with Unprecedented Flexibility}. In \bibinfo{booktitle}{{\em
+  NSDI}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chen, Chen, Zhu, Yu, Porter, Qiao, and
+  Zhong}{Chen et~al\mbox{.}}{2016}]%
+        {megaswitch}
+\bibfield{author}{\bibinfo{person}{Li Chen}, \bibinfo{person}{Kai Chen},
+  \bibinfo{person}{Zhonghua Zhu}, \bibinfo{person}{Minlan Yu},
+  \bibinfo{person}{George Porter}, \bibinfo{person}{Chunming Qiao}, {and}
+  \bibinfo{person}{Shan Zhong}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Enabling Wide-Spread Communications on Optical
+  Fabric with {MegaSwitch}}. In \bibinfo{booktitle}{{\em NSDI}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chowdhury and Stoica}{Chowdhury and
+  Stoica}{2012}]%
+        {coflow}
+\bibfield{author}{\bibinfo{person}{Mosharaf Chowdhury} {and}
+  \bibinfo{person}{Ion Stoica}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Coflow: An application layer abstraction for
+  cluster networking}. In \bibinfo{booktitle}{{\em Hotnets}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chowdhury and Stoica}{Chowdhury and
+  Stoica}{2015}]%
+        {aalo}
+\bibfield{author}{\bibinfo{person}{Mosharaf Chowdhury} {and}
+  \bibinfo{person}{Ion Stoica}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Efficient Coflow Scheduling Without Prior
+  Knowledge}. In \bibinfo{booktitle}{{\em SIGCOMM}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Chowdhury, Zhong, and Stoica}{Chowdhury
+  et~al\mbox{.}}{2014}]%
+        {varys}
+\bibfield{author}{\bibinfo{person}{Mosharaf Chowdhury}, \bibinfo{person}{Yuan
+  Zhong}, {and} \bibinfo{person}{Ion Stoica}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Efficient coflow scheduling with {Varys}}. In
+  \bibinfo{booktitle}{{\em SIGCOMM}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Cormen}{Cormen}{2009}]%
+        {introduction}
+\bibfield{author}{\bibinfo{person}{Thomas~H Cormen}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Introduction to algorithms}}.
+\newblock \bibinfo{publisher}{MIT press}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Dean and Ghemawat}{Dean and Ghemawat}{2004}]%
+        {mapreduce}
+\bibfield{author}{\bibinfo{person}{Jeffrey Dean} {and} \bibinfo{person}{Sanjay
+  Ghemawat}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{MapReduce: Simplified Data Processing on Large
+  Clusters}. In \bibinfo{booktitle}{{\em OSDI}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Farrington, Forencich, Porter, Sun, Ford,
+  Fainman, Papen, and Vahdat}{Farrington et~al\mbox{.}}{2013}]%
+        {mordia-ptl}
+\bibfield{author}{\bibinfo{person}{Nathan Farrington}, \bibinfo{person}{Alex
+  Forencich}, \bibinfo{person}{George Porter}, \bibinfo{person}{Pang-Chen Sun},
+  \bibinfo{person}{Joseph Ford}, \bibinfo{person}{Yeshaiahu Fainman},
+  \bibinfo{person}{George Papen}, {and} \bibinfo{person}{Amin Vahdat}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{A Multiport Microsecond Optical Circuit Switch for
+  Data Center Networking}. In \bibinfo{booktitle}{{\em IEEE Photonics
+  Technology Letters}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ghobadi, Mahajan, Phanishayee, Devanur,
+  Kulkarni, Ranade, Blanche, Rastegarfar, Glick, and Kilper}{Ghobadi
+  et~al\mbox{.}}{2016}]%
+        {projector}
+\bibfield{author}{\bibinfo{person}{Monia Ghobadi}, \bibinfo{person}{Ratul
+  Mahajan}, \bibinfo{person}{Amar Phanishayee}, \bibinfo{person}{Nikhil
+  Devanur}, \bibinfo{person}{Janardhan Kulkarni}, \bibinfo{person}{Gireeja
+  Ranade}, \bibinfo{person}{Pierre-Alexandre Blanche}, \bibinfo{person}{Houman
+  Rastegarfar}, \bibinfo{person}{Madeleine Glick}, {and}
+  \bibinfo{person}{Daniel Kilper}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{ProjecToR}: Agile Reconfigurable Data Center
+  Interconnect}. In \bibinfo{booktitle}{{\em SIGCOMM}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Huang, Sun, and Ng}{Huang
+  et~al\mbox{.}}{2016}]%
+        {sunflow}
+\bibfield{author}{\bibinfo{person}{Xin~Sunny Huang},
+  \bibinfo{person}{Xiaoye~Steven Sun}, {and} \bibinfo{person}{TS~Eugene Ng}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Sunflow: Efficient Optical Circuit Scheduling for
+  Coflows}. In \bibinfo{booktitle}{{\em CoNEXT}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Liu, Mukerjee, Li, Feltman, Papen, Savage,
+  Seshan, Voelker, Andersen, Kaminsky, et~al\mbox{.}}{Liu
+  et~al\mbox{.}}{2015}]%
+        {solstice}
+\bibfield{author}{\bibinfo{person}{He Liu}, \bibinfo{person}{Matthew~K
+  Mukerjee}, \bibinfo{person}{Conglong Li}, \bibinfo{person}{Nicolas Feltman},
+  \bibinfo{person}{George Papen}, \bibinfo{person}{Stefan Savage},
+  \bibinfo{person}{Srinivasan Seshan}, \bibinfo{person}{Geoffrey~M Voelker},
+  \bibinfo{person}{David~G Andersen}, \bibinfo{person}{Michael Kaminsky},
+  {et~al\mbox{.}}} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Scheduling techniques for hybrid circuit/packet
+  networks}. In \bibinfo{booktitle}{{\em CoNEXT}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Mellette, McGuinness, Roy, Forencich, Papen,
+  Snoeren, and Porter}{Mellette et~al\mbox{.}}{2017}]%
+        {rotornet}
+\bibfield{author}{\bibinfo{person}{William~M Mellette}, \bibinfo{person}{Rob
+  McGuinness}, \bibinfo{person}{Arjun Roy}, \bibinfo{person}{Alex Forencich},
+  \bibinfo{person}{George Papen}, \bibinfo{person}{Alex~C Snoeren}, {and}
+  \bibinfo{person}{George Porter}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{RotorNet: A scalable, low-complexity, optical
+  datacenter network}. In \bibinfo{booktitle}{{\em SIGCOMM}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Wang, Andersen, Kaminsky, Papagiannaki, Ng,
+  Kozuch, and Ryan}{Wang et~al\mbox{.}}{2010}]%
+        {cthrough}
+\bibfield{author}{\bibinfo{person}{Guohui Wang}, \bibinfo{person}{David
+  Andersen}, \bibinfo{person}{Michael Kaminsky}, \bibinfo{person}{Konstantina
+  Papagiannaki}, \bibinfo{person}{T. Ng}, \bibinfo{person}{Michael Kozuch},
+  {and} \bibinfo{person}{Michael Ryan}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{{c-Through}: Part-time Optics in Data Centers}. In
+  \bibinfo{booktitle}{{\em SIGCOMM}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Chen, Yi, Chen, Chowdhury, and
+  Geng}{Zhang et~al\mbox{.}}{2016}]%
+        {coda}
+\bibfield{author}{\bibinfo{person}{Hong Zhang}, \bibinfo{person}{Li Chen},
+  \bibinfo{person}{Bairen Yi}, \bibinfo{person}{Kai Chen},
+  \bibinfo{person}{Mosharaf Chowdhury}, {and} \bibinfo{person}{Yanhui Geng}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{CODA}: Toward automatically identifying and
+  scheduling coflows in the dark}. In \bibinfo{booktitle}{{\em SIGCOMM}}.
+\newblock
+
+
+\end{thebibliography}

@@ -1,0 +1,29 @@
+%\vspace{-0.06in}
+\section{Related Work}
+\vspace{-0.06in}
+\parab{Coflow Scheduling in Packet Switched Networks}
+Most existing coflow schedulers are designed for packet switched networks \cite{varys,aalo,coda}, while the optical fabric brings two major challenges. First, the circuit configuration introduces the integrality constraint, which serves as the major cause of the mismatch between coflow demand and circuit configuration as we show in Section \ref{sec:alg1}.
+Moreover, since reconfiguration introduces non-negligible delay in optical networks, the scheduler has to decide whether to reconfigure the circuit after coflow arrival/departure. As shown in Section \ref{sec:alg4}, this greatly enlarges the solution space and complicates the problem.
+
+\parab{Circuit Scheduling}
+%As we mentioned in Section \ref{sec:intro}, the scheduling problem we study greatly differs from the previous circuit scheduling works in terms of traffic pattern, application semantics and connectivity. So
+We discuss several most related work in circuit scheduling.
+Sunflow \cite{sunflow} first studies the coflow scheduling problem in optical networks. However, it adopts the assumption that one ToR can only establish one connection simultaneously, which no longer holds in many current optical architecture designs \cite{megaswitch,projector}. %Such rich connectivity makes a big difference as we shown in .
+Moreover, Sunflow only leverages circuit shaping, which is not sufficient with rich connection among ToRs. Third, preemption is not allowed in Sunflow once the circuit is established. However we notice that it plays an important role in minimizing CCT for multiple coflows ($\S$\ref{sec:alg4}).
+%However as we show in Section \ref{sec:alg}, a joint reshaping is important for efficient scheduling with rich connection among ToRs. Third, preemption is not allowed in Sunflow once the circuit is established for a flow. While we notice that preemption (in terms of both circuit configuration and coflow ordering) plays an important role in minimizing CCT for multiple coflows, and we include preemption decisions as important components in our framework ($\S$\ref{sec:alg4}).
+Eclipse \cite{eclipse} also leverages multi-hop routing for circuit scheduling, however it
+does not consider application semantics such as coflow. Moreover, Eclipse requires the relaying ToR to buffer the traffic and transmit in a subsequent configuration for multi-hop routing.
+Doing so requires huge extra buffer and adds at least one extra reconfiguration delay.
+%Compare to such store-and-forward method, we can establish multi-hop routing directly via source routing.
+%we can directly establish  multi-hop routing rules via openflow \cite{openflow} or programable switches \cite{p4}.
+In one word, neither Eclipse nor Sunflow answers our motivating question, that how we can best serve the application traffic demand in start-of-the-art optical datacenter fabrics.
+
+RotorNet \cite{rotornet} proposes a scalable and low-complexity optical datacenter network design
+with a fully decentralized control plane. Unfortunately, the decentralized design cannot be easily extended to perform efficient coflow scheduling. The spatial structure of coflow naturally requires coordinated scheduling, and
+decentralized coflow scheduling remains an open problem even in packet switched networks \cite{aalo}.
+
+%\vspace{-0.1in}
+
+%Note that such reshaping is different from existing multi-hop routing solutions in OSA, multi-hop overlay networking
+%Comparatively, we can enable such reshaping by dynamically updating routing rules on the ToR switches. For example, a sender can arbitrarily allocates its egress capacity to different receivers in packet switched networks.
+%However there is no way to split a sending port into two halves and connect to two receiving port simultaneously in optical networks. 
